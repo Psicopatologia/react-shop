@@ -5,6 +5,7 @@ import Login from '../containers/Login';
 import RecoveryPassword from '../containers/RecoveryPassword';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
+import NewPassword from '../containers/NewPassword'
 import '../styles/global.css';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/recovery-password" element={<RecoveryPassword />} />
+          <Route path="/new-password" element={<NewPassword />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
