@@ -9,6 +9,7 @@ import NewPassword from '../containers/NewPassword'
 import CreateUser from '../containers/CreateUser';
 import MyAccount from '../containers/MyAccount';
 import ProductInfo from '../containers/ProductInfo';
+import MyOrder from '../containers/MyOrder';
 import '../styles/global.css';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/my-account" element={<MyAccount />} />
           <Route path="/product-info" element={<ProductInfo />} />
+          <Route path="/my-order" element={<MyOrder />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
