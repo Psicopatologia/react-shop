@@ -1,35 +1,37 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Layout from '../containers/Layout';
-import Login from '../containers/Login';
-import RecoveryPassword from '../containers/RecoveryPassword';
 import Home from '../pages/Home';
+import Login from '../pages/Login';
+import PasswordRecovery from '../pages/PasswordRecovery';
+import SendEmail from '../pages/SendEmail';
+import NewPassword from '../pages/NewPassword';
+import MyAccount from '../pages/MyAccount';
+import CreateAccount from '../pages/CreateAccount';
+import Checkout from '../pages/Checkout';
+import Orders from '../pages/Orders';
 import NotFound from '../pages/NotFound';
-import NewPassword from '../containers/NewPassword'
-import CreateUser from '../containers/CreateUser';
-import MyAccount from '../containers/MyAccount';
-import ProductInfo from '../containers/ProductInfo';
-import MyOrder from '../containers/MyOrder';
 import '../styles/global.css';
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/recovery-password" element={<RecoveryPassword />} />
-          <Route path="/new-password" element={<NewPassword />} />
-          <Route path="/create-user" element={<CreateUser />} />
-          <Route path="/my-account" element={<MyAccount />} />
-          <Route path="/product-info" element={<ProductInfo />} />
-          <Route path="/my-order" element={<MyOrder />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
-  )
+	return (
+		<BrowserRouter>
+			<Layout>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/login" component={Login} />
+					<Route exact path="/password-recovery" component={PasswordRecovery} />
+					<Route exact path="/send-email" component={SendEmail} />
+					<Route exact path="/new-password" component={NewPassword} />
+					<Route exact path="/account" component={MyAccount} />
+					<Route exact path="/signup" component={CreateAccount} />
+					<Route exact path="/checkout" component={Checkout} />
+					<Route exact path="/orders" component={Orders} />
+					<Route path="*" component={NotFound} />
+				</Switch>
+			</Layout>
+		</BrowserRouter>
+	);
 }
 
-export default App
+export default App;
