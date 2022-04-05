@@ -6,6 +6,13 @@ import '@styles/MyOrder.scss';
 
 const MyOrder = () => {
 	const { state } = useContext(AppContext);
+
+	const sum = () => {
+		const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+		const sum = state.cart.reduce(reducer, 0);
+		return sum;
+	}
+
 	if (state) console.log(state);
 	return (
 		<aside className="MyOrder">
@@ -21,7 +28,7 @@ const MyOrder = () => {
 					<p>
 						<span>Total</span>
 					</p>
-					<p>$560.00</p>
+					<p>${sum()}</p>
 				</div>
 				<button className="primary-button">
 					Checkout
